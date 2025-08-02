@@ -102,5 +102,16 @@
         margin-bottom: 2rem;
 
     }
-
+    .contact-btn{
+        border: solid 1px #C778DD;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: transparent;
+        color: #C778DD;
+    }
+    .contact-btn:hover{
+        background-color: #C778DD;
+        color: #282C33;
+        transition: 0.3s ease-in-out;
+    }
 }
