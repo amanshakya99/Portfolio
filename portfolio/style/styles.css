@@ -1,3 +1,11 @@
+:root {
+  --accent: #C778DD;
+  --text: #f5f5f5;
+  --bg: #282C33;
+  --radius: 6px;
+  --spacing: 1rem 2rem;
+}
+
 *,
 *::before,
 *::after {
@@ -19,7 +27,7 @@
     body {
         width: 100%;
         overflow-x: hidden;
-        background-color: #282C33;
+        background-color: var(--bg);
     }
 
     .nav-div{
@@ -31,34 +39,67 @@
         
     }
 
-    li{
+    ul li{
         list-style: none;
         display: inline-block;
         
     }
 
     li a{
-        color: #ABB2BF;
+        padding: 1rem 1rem;
+        color: var(--text);
         font-size: 14px;
         margin: 10px;
         text-decoration: none;
+        position: relative;
+ 
     }
 
-    li a:hover{
-        color: #C778DD; /* or any retro/neon color */
-        text-decoration: underline;
+    ul li a:before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent); /* or any retro/neon color */
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: center;
+    }
+
+    ul li a:hover:before,
+    ul li a:hover:after{
+        color: var(--accent); /* or any retro/neon color */
+        transform: scaleX(1);
+    }
+
+    ul li a:after{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color:var(--accent); /* or any retro/neon color */
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: center;
     }
 
     .logo a{
         text-decoration: none;
-        color:#C778DD;
         font-size: 16px;
+        background: linear-gradient(90deg, #C778DD, #E06C75);
+        color: transparent;
+        background-clip: text;
     }
 
     .hero{
         display: flex;
         align-items: flex-end;
-        gap: 10px;
+        justify-content: flex-end;
+        /* gap: 10px; */
         flex-wrap: wrap;
         margin-top: 2rem;
 
@@ -68,7 +109,7 @@
 
     .hero-text{
         max-width: 694px;
-        color:#ABB2BF;
+        color:var(--text);
         
     }
 
@@ -93,7 +134,7 @@
     }
 
     .colored-text{
-        color:#C778DD;
+        color:var(--accent);
     }
 
     .intro-2{
@@ -103,15 +144,22 @@
 
     }
     .contact-btn{
-        border: solid 1px #C778DD;
+        border: solid 1px var(--accent);
         padding: 10px 20px;
         border-radius: 5px;
         background-color: transparent;
-        color: #C778DD;
+        color: var(--accent);
     }
     .contact-btn:hover{
-        background-color: #C778DD;
-        color: #282C33;
+        background-color: var(--accent);
+        color: var(--bg);
         transition: 0.3s ease-in-out;
+    }
+
+    .work-status{
+        border: solid 1px var(--accent);
+        padding: 1rem 2rem;
+        font-size: 12px;
+        color: var(--text);
     }
 }
